@@ -1,3 +1,48 @@
 <template>
-  <h1>${message}</h1>
+
+  <dragula-and-drop drop-fn.call="itemDropped(item, target, source, sibling, itemVM, siblingVM)"></dragula-and-drop>
+<div class="ui grid">
+  <div class="ui fourteen wide column container">
+    <section class="ui raised segment">
+      <h1 class="ui header"> Job Planner </h1>
+    </section>
+
+    <section class="ui three column grid segment">
+
+      <div class="ui column container">
+      <section class="ui segment">
+        <div id="modal" class="drag-source drop-target">
+          <div class="ui raised segment">Dit is een test item</div>
+          <div class="ui raised segment">Dit is een test item</div>
+        </div>
+        <br>
+        <div class="ui input">
+        <input type="text" id="text" value.bind="cardValue" />
+        </div>
+        <button id="add" class="blue ui button" click.trigger="add()">add</button>
+      </section>
+      </div>
+
+      <div class="ui column container">
+      <section class="ui segment">
+        <div id="modal2" class="drag-source drop-target">
+          <div class="ui raised segment">Dit is een test item</div>
+          <div class="ui raised segment">Dit is een test item</div>
+        </div>
+      </section>
+      </div>
+
+        <div class="ui column container">
+      <section class="ui segment">
+        <div id="modal3" class="drag-source drop-target">
+          <div class="ui raised segment">Dit is een test item</div>
+          <div class="ui raised segment">Dit is een test item</div>
+        </div>
+      </section>
+        </div>
+    </section>
+
+
+  </div>
+</div>
 </template>
