@@ -1,8 +1,16 @@
+import {Card, User} from "./services/planner-types";
 
 export class App {
   public message: string = 'Hello World!';
 
-  cardValue: String;
+  cardValue: string;
+  _id: number = 0;
+  cards: Card[] = [{_id: 'Worked', text: "the long way around"}];
+  users: User[] = [
+    {name: "Peter Carol"},
+    {name: "Joan Linch"}
+
+  ];
 
   itemDropped(item, target, source, sibling, itemVM, siblingVM) {
     //do things in here
@@ -17,19 +25,16 @@ export class App {
   }
 
   add(){
-    console.log('button pressed');
+    // console.log('button pressed');
 
-    var item = document.createElement("div");
-    var textValue = this.cardValue.valueOf();
-    var textItem = document.createTextNode(textValue);
-    item.appendChild(textItem);
-    item.className = "ui raised segment";
-    document.getElementById("modal").appendChild(item);
+    this.cards.push({_id: this._id.toString(), text: this.cardValue});
 
-    console.log(this.cardValue);
-    console.log(item);
+    // console.log(`${this._id} : ${this.cardValue}`);
+    this._id ++;
+    this.cardValue = undefined;
 
-    this.cardValue = '';
+
+
   }
 
 

@@ -1,5 +1,8 @@
 <template>
 
+  <require from="resources/elements/column-block"></require>
+  <require from="resources/elements/card-block"></require>
+
   <dragula-and-drop drop-fn.call="itemDropped(item, target, source, sibling, itemVM, siblingVM)"></dragula-and-drop>
 <div class="ui grid">
   <div class="ui fourteen wide column container">
@@ -7,13 +10,12 @@
       <h1 class="ui header"> Job Planner </h1>
     </section>
 
-    <section class="ui three column grid segment">
+    <section class="ui grid segment">
 
-      <div class="ui column container">
+      <div class="ui three wide column container">
       <section class="ui segment">
-        <div id="modal" class="drag-source drop-target">
-          <div class="ui raised segment">Dit is een test item</div>
-          <div class="ui raised segment">Dit is een test item</div>
+        <div id="modal" class="drag-source drop-target" >
+          <card-block repeat.for="card of cards" containerless card.bind="card"></card-block>
         </div>
         <br>
         <div class="ui input">
@@ -23,23 +25,13 @@
       </section>
       </div>
 
-      <div class="ui column container">
-      <section class="ui segment">
-        <div id="modal2" class="drag-source drop-target">
-          <div class="ui raised segment">Dit is een test item</div>
-          <div class="ui raised segment">Dit is een test item</div>
+
+      <div class="ui thirteen wide column container" >
+        <div class="ui three column grid container">
+      <column-block user.bind="user" repeat.for="user of users" containerless></column-block>
         </div>
-      </section>
       </div>
 
-        <div class="ui column container">
-      <section class="ui segment">
-        <div id="modal3" class="drag-source drop-target">
-          <div class="ui raised segment">Dit is een test item</div>
-          <div class="ui raised segment">Dit is een test item</div>
-        </div>
-      </section>
-        </div>
     </section>
 
 
