@@ -1,14 +1,29 @@
 <template>
-
-<!--  <dragula-and-drop drop-fn.call="itemDroppedHere(item, target, source, sibling, itemVM, siblingVM)"></dragula-and-drop>-->
+  <require from="resources/elements/card-block"></require>
 
     <section class="ui column">
       <div class="ui segment">
-        <div class="ui header">${user.name}</div>
-      <div class="drag-source drop-target">
-        <div class="ui raised segment">Dit is een test item 1</div>
-        <div class="ui raised segment">Dit is een test item 2</div>
-      </div>
+
+
+        <div class="ui header">${user.name}
+
+          <div class=" ui teal  label">
+            Multiplier
+            <div class="detail">${user.multiplier}</div>
+          </div>
+
+          <div class=" ui blue label">
+            Total
+            <div class="detail">${total.toPrecision(2)}</div>
+          </div>
+
+        </div>
+
+
+        <div class="drag-source drop-target" id="${user._id}">
+          <card-block card.bind="card" containerless repeat.for="card of cards"></card-block>
+
+        </div>
       </div>
     </section>
 </template>

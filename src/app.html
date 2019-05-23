@@ -2,6 +2,7 @@
 
   <require from="resources/elements/column-block"></require>
   <require from="resources/elements/card-block"></require>
+  <require from="resources/elements/results-block"></require>
 
   <dragula-and-drop drop-fn.call="itemDropped(item, target, source, sibling, itemVM, siblingVM)"></dragula-and-drop>
 <div class="ui grid">
@@ -28,8 +29,11 @@
 
       <div class="ui thirteen wide column container" >
         <div class="ui three column grid container">
-      <column-block user.bind="user" repeat.for="user of users" containerless></column-block>
+          <column-block cards.bind="cards" containerless repeat.for="user of users" user.bind="user"></column-block>
+          <results-block containerless></results-block>
         </div>
+
+
       </div>
 
     </section>
