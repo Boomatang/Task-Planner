@@ -1,0 +1,33 @@
+<template>
+  <ai-dialog>
+    <div class="ui middle aligned raised segment">
+      <ai-dialog-body>
+        <div class="ui middle aligned icon header">
+          <i class="archive icon"></i>
+          Archive Old Messages
+        </div>
+        <div class="ui center aligned container">
+          <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+
+        </div>
+        <br>
+      </ai-dialog-body>
+
+      <ai-dialog-footer>
+        <div class="ui center aligned container">
+          <div class="ui red basic cancel button" click.trigger="cancelPressed()">
+            <i class="remove icon"></i>
+            No
+          </div>
+          <div class="ui green ok button" click.trigger="okPressed()">
+            <i class="checkmark icon"></i>
+            Yes
+          </div>
+        </div>
+      </ai-dialog-footer>
+
+    </div>
+  </ai-dialog>
+</template>
+
+

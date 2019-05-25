@@ -10,7 +10,9 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.2",
+    "aurelia-dialog": "^2.0.0-rc.5",
     "aurelia-dragula": "^2.0.6",
+    "jquery": "^3.4.1",
     "mocha": "^6.1.4"
   },
   "devDependencies": {

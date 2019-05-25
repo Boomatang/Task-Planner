@@ -16,7 +16,8 @@ export function configure(aurelia: Aurelia) {
 
   aurelia.use
     .standardConfiguration()
-    .plugin(PLATFORM.moduleName('aurelia-dragula')) // <--- wrapping in PLATFORM.moduleName()
+    .plugin(PLATFORM.moduleName('aurelia-dragula'))
+    .plugin(PLATFORM.moduleName('aurelia-dialog'))// <--- wrapping in PLATFORM.moduleName()
     .developmentLogging();
   aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }
