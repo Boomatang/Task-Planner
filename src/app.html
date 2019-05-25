@@ -30,7 +30,7 @@
       <div class="ui thirteen wide column container" >
         <div class="ui three column grid container">
           <column-block cards.bind="cards" containerless repeat.for="user of users" user.bind="user"></column-block>
-          <results-block containerless></results-block>
+          <results-block cards.bind="cards" containerless users.bind="users"></results-block>
         </div>
 
 

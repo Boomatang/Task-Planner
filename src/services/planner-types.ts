@@ -15,3 +15,8 @@ export interface CardRank {
   position: number;
   weight: number;
 }
+
+export interface Results {
+  card: string;
+  weights: Map<string, number>;
+}

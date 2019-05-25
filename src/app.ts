@@ -8,7 +8,7 @@ export class App {
   public message: string = 'Hello World!';
 
   cardValue: string;
-  _id: number = 0;
+  _id: number;
   cards: Card[] = [
     {_id: '0', text: "Task A"},
     {_id: '1', text: "Task B"},
@@ -19,11 +19,13 @@ export class App {
   // cards: Card[] = [];
   users: User[] = [
     {_id: "PC1", name: "Peter Carol", multiplier: 1.1, ranks: new Map<string, CardRank>()},
+    {_id: "AM1", name: "Alan Marks", multiplier: 0.4, ranks: new Map<string, CardRank>()},
     {_id: "JL1", name: "Joan Linch", multiplier: 0.9, ranks: new Map<string, CardRank>()}
 
   ];
 
   constructor(private ea: EventAggregator) {
+    this._id = this.cards.length;
   }
 
   static showIt(element) {
@@ -31,8 +33,8 @@ export class App {
     let i = 0;
     var parent = element.parentNode;
     parent.children.forEach(item => {
-      console.log(item.parentElement.children.length);
-      console.log("Value above");
+      // console.log(item.parentElement.children.length);
+      // console.log("Value above");
 
       items.push({index: i, id: item.id});
       i++;
@@ -45,7 +47,7 @@ export class App {
 
   itemDropped(item, target, source, sibling, itemVM, siblingVM) {
     //do things in here
-    console.log("it was dropped");
+    // console.log("it was dropped");
     App.showIt(item);
 
 
@@ -59,7 +61,7 @@ export class App {
 
       payload.push(entry);
     });
-
+    console.log("About to publish message");
     this.ea.publish(new OrderChange(target.id, payload))
   }
 
